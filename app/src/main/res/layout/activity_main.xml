@@ -50,4 +50,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/capibara" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cambiopush"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="24dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
