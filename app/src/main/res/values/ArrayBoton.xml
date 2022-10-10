@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="saludos">
+        <item>¡Hola Mundo!</item>
+        <item>Hello World!</item>
+        <item>「こんにちは世界」</item>
+        <item>Hallo Welt!</item>
+    </string-array>
+    <string-array name="idiomas">
+        <item>Español</item>
+        <item>English</item>
+        <item>日本人</item>
+        <item>deutsch</item>
+    </string-array>
+</resources>
