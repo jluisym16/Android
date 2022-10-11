@@ -9,10 +9,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+import java.util.Random;
 
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+    String[] saludos, idiomas;
+    Random nombre = new Random();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,13 +24,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button boton = findViewById(R.id.button); //identifica el botón con el id "button"
         Button boton2 = findViewById(R.id.boton2);
         ImageView capi= findViewById(R.id.capibara);
+        TextView texto = findViewById(R.id.texto);
         boton.setOnClickListener(this); //escucha cuando el botón es pulsado y ejecuta el método "onClick"
         capi.setOnClickListener(this);
-        boton2.setOnClickListener(this::clickboton); //escucha el click del boton2 y ejecuta lo que hace el método clickboton
-    }
 
-    public void clickboton(View view){
+        saludos = getResources().getStringArray(R.array.saludos);
+        idiomas = getResources().getStringArray(R.array.idiomas);
+        boton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int cambiar= nombre.nextInt(saludos.length);
+                texto.setText(saludos[cambiar]);
+                boton2.setText(idiomas[cambiar]);
 
+            }
+        }); //escucha el click del boton2 y ejecuta lo que hace el método clickboton
     }
 
     public void onClick(View view) {
